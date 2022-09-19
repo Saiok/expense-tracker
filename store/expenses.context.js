@@ -60,8 +60,8 @@ const DUMMY_EXPENSES = [
 export const ExpensesContext = createContext({
   expenses: [],
   addExpense: ({ description, amount, date }) => {},
-  updateExpense: (id) => {},
-  deleteExpense: (id, { description, amount, date }) => {}
+  updateExpense: (id, { description, amount, date }) => {},
+  deleteExpense: (id) => {}
 });
 
 function expensesReducer(state, action) {
@@ -79,7 +79,7 @@ function expensesReducer(state, action) {
       updatedExpenses[updatableExpenseIndex] = updatedItem;
       return updatedExpenses;
     case 'DELETE':
-      return state.filter((expense) => expense.id !== action.apyload.id);
+      return state.filter((expense) => expense.id !== action.payload);
     default:
       return state;
   }
