@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import Button from '../components/ui/Button';
 import IconButton from '../components/ui/IconButton';
+import ExpenseForm from '../components/ManageExpense/ExpenseForm';
 import { GlobalStyles } from '../constants/styles';
 import { ExpensesContext } from '../store/expenses.context';
 
@@ -45,6 +46,7 @@ export default function ManageExpenses({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      <ExpenseForm />
       <View style={styles.buttonsContainer}>
         <Button
           style={styles.buttonContainer}
